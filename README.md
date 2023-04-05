@@ -38,25 +38,28 @@ Ele serve para padronizar a programação em um projeto, mantendo uma boa práti
 
 Após o comnado ser executado um questionário será apresentado:
 
- **How would you like to use ESLint?** · style
-**√ What type of modules does your project use?** · esm
-**√ Which framework does your project use?** · react
-**√ Does your project use TypeScript?** · No / Yes
-**√ Where does your code run?** · browser
-**√ How would you like to define a style for your project?** · prompt
-**√ What format do you want your config file to be in?** · JSON
-**√ What style of indentation do you use?** · 4
-**√ What quotes do you use for strings?** · single
-**√ What line endings do you use?** · unix 
-**√ Do you require semicolons?** · No / Yes
-Local ESLint installation not found.
-The config that you've selected requires the following dependencies:
-eslint-plugin-react@latest eslint@latest
-**√ Would you like to install them now?** · No / Yes
-**√ Which package manager do you want to use?** · npm  
+ **How would you like to use ESLint?** · style</br>
+**√ What type of modules does your project use?** · esm</br>
+**√ Which framework does your project use?** · react</br>
+**√ Does your project use TypeScript?** · No / Yes</br>
+**√ Where does your code run?** · browser</br>
+**√ How would you like to define a style for your project?** · prompt</br>
+**√ What format do you want your config file to be in?** · JSON</br>
+**√ What style of indentation do you use?** · 4</br>
+**√ What quotes do you use for strings?** · single</br>
+**√ What line endings do you use?** · unix </br>
+**√ Do you require semicolons?** · No / Yes</br>
+Local ESLint installation not found.</br>
+The config that you've selected requires the following dependencies:</br>
+eslint-plugin-react@latest eslint@latest</br>
+**√ Would you like to install them now?** · No / Yes</br>
+**√ Which package manager do you want to use?** · npm  </br>
 
 Crie uma pasta chamada .vscode na raiz do projeto para deixar configurações padrões do projeto no VSCode. Essas configurações serão transmitidas na cópia do projeto para outra máquina para facilitar o desenvolvimento.
 
+Nessa pasta crie o arquivo settings.json com o código abaixo:
+
+~~~json~~~
 {
     "files.eol": "\n", // End of line sequence
     "editor.tabSize": 2, // Tamanho da identação
@@ -65,21 +68,25 @@ Crie uma pasta chamada .vscode na raiz do projeto para deixar configurações pa
         "source.fixAll.eslint": true, // Vai tentar resolver os problemas do eslint ao salvar (Aperte CTR+S para corrigir o código, mesmo com salvamento automático)
     }
 }
+~~~
 
 Propriedade de aspas duplas nos elementos react inseridas no arquivo de configuração .eslintrc.json:
 
+~~~json~~~
 "jsx-quotes": [
             2,
             "prefer-double"
         ]
+~~~
 
 Regra de ultima linha no código:
 
+~~~json~~~
 "eol-last": [
             "error",
             "always"
         ]
-
+~~~
 
 # Informações importantes React
 
