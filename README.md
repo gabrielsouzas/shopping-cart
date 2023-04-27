@@ -88,6 +88,24 @@ Regra de ultima linha no código:
         ]
 ~~~
 
+### React Icons
+
+Para usar o react-icons vá até a página [React Icons](https://react-icons.github.io/react-icons/).
+
+Procure pelo ícone em Seacr icons e clique sobre o ícone escolhido para copiá-lo.
+
+Para usar no projeto use o import e especifique de qual biblioteca está vindo o ícone. No exemplo abaixo é utilizado o icone search do Bootstrap, por isso o Bs no inicio do ícone e o /bs no final do react-icons:
+
+~~~jsx~~~
+import { BsSearch } from 'react-icons/bs';
+~~~
+
+O comportamento do ícone será como de um componente, então ficará da seguinte forma:
+
+~~~jsx~~~
+<BsSearch/>
+~~~
+
 # Informações importantes React
 
 ## Getting Started with Create React App
