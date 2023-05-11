@@ -11,14 +11,17 @@ function Products() {
   useEffect(() => {
     fetchProducts('iphone').then((response) => {
       setProducts(response);
-      console.log(products);
     });
 
   }, []);
 
   return (
     <section className="products container">
-      <ProductCard />
+      {/* Para cada produto retornado da busca da API vai criar um ProductCard passando os dados como props */}
+      {
+        products.map((product) => <ProductCard key={product.id} data={product} />)
+      }
+
     </section>
   );
 }
