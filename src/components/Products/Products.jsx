@@ -18,9 +18,7 @@ function Products() {
   return (
     <section className="products container">
       {/* Para cada produto retornado da busca da API vai criar um ProductCard passando os dados como props */}
-      {
-        products.map((product) => <ProductCard key={product.id} data={product} />)
-      }
+      {products.map((product) => <ProductCard key={product.id} data={product} />)}
 
     </section>
   );
