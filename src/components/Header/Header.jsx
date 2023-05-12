@@ -11,7 +11,7 @@ function Header() {
       <div className="container">
 
         <SearchBar/>
-        <CartButton />
+        <CartButton/>
       </div>
     </header>
   );
