@@ -7,8 +7,13 @@ function SearchBar() {
 
   const [searchValue, setSearchValue] = useState('');
 
+  const handleSearch = (event) => {
+    event.preventDefault();
+    alert('teste');
+  };
+
   return (
-    <form className="search-bar">
+    <form className="search-bar" onSubmit={handleSearch}>
       <input
         type="search"
         value={searchValue}/* Coloca o valor aqui porque quem manipula o value é o useState */
