@@ -9,7 +9,7 @@ import AppContext from '../../context/AppContext';
 function CartItem({ data }) {
 
   const { cartItens, setCartItens } = useContext(AppContext);
-  const { id, thumbnail, title, price } = data;
+  const { id, thumbnail, title, price, quantity } = data;
 
   const handleRemoveItem = () => {
     const updatedItens = cartItens.filter((item) => item.id != id);
@@ -34,6 +34,8 @@ function CartItem({ data }) {
           onClick={ handleRemoveItem }
         >
           <BsCartDashFill />
+
+          { quantity && <span className="cart-item-status">{quantity}</span> }
         </button>
 
       </div>

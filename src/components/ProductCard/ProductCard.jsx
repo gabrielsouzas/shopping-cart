@@ -9,7 +9,7 @@ import AppContext from '../../context/AppContext';
 function ProductCard({ data }) {
 
   // Desestruturação da variavel data (props)
-  const { title, thumbnail, price } = data;
+  const { id, title, thumbnail, price } = data;
 
   const { cartItens, setCartItens} = useContext(AppContext);
 
@@ -21,7 +21,32 @@ function ProductCard({ data }) {
   };*/
 
   // Colocar os dados no carrinho - 2º Método
-  const handleAddCart = () => setCartItens([ ...cartItens, data]);
+  //const handleAddCart = () => setCartItens([ ...cartItens, data]);
+
+  // Colocar os dados no carrinho - 3º Método (Com teste de ID)
+  const handleAddCart = () => {
+    var productRepeated = false;
+    const updatedCartItens = cartItens;
+    //console.log(updatedCartItens);
+    updatedCartItens.map((cartItem) => {
+      if (cartItem.id === id) {
+        cartItem.quantity ? cartItem.quantity++ : cartItem.quantity = 2;
+        cartItem.price = cartItem.price * cartItem.quantity;
+        productRepeated = true;
+        return;
+      }
+      //cartItem.id === id ? cartItem : null;
+    });
+    //console.log(updatedCartItens);
+    productRepeated ? setCartItens(updatedCartItens) : setCartItens([ ...cartItens, data]);
+    //return updatedCartItens;
+  };
+
+  /*const addQuantityAttribute = () => {
+    const updatedItens = cartItens;
+    updatedItens.quantity = 1;
+    setCartItens(updatedItens);
+  };*/
 
   return (
     <section className="product-card">
