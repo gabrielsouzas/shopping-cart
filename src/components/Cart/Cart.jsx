@@ -11,7 +11,6 @@ function Cart() {
   /* Função para calcular o total dos valores do carrinho
      Utilizando a função reduce, que percorre um array e guarda um valor em um acumulador a cada iteração*/
   const totalPrice = cartItens.reduce((acc, item) => item.price + acc, 0/*VALOR INICIAL*/);
-  //const totalPrice = cartItens.reduce((acc, item) => item.price + acc, 0);
 
   return (
     <section className={`cart ${isCartVisible ? 'cart--active' : ''}`}>
