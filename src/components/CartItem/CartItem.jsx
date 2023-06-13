@@ -11,9 +11,21 @@ function CartItem({ data }) {
   const { cartItens, setCartItens } = useContext(AppContext);
   const { id, thumbnail, title, price, quantity } = data;
 
-  const handleRemoveItem = () => {
+  /*const handleRemoveItem = () => {
     const updatedItens = cartItens.filter((item) => item.id != id);
     setCartItens(updatedItens);
+  };*/
+
+  const handleRemoveItem = () => {
+    const updatedItens = quantity > 1 ? removeItemQuantity() : cartItens.filter((item) => item.id != id);
+    setCartItens(updatedItens);
+  };
+
+  const removeItemQuantity = () => {
+    cartItens.map((cartItem) => {
+      cartItem.quantity ? cartItem.price = (cartItem.price/cartItem.quantity) * cartItem.quantity-- : '';
+    });
+    return cartItens;
   };
 
   return (
@@ -35,7 +47,7 @@ function CartItem({ data }) {
         >
           <BsCartDashFill />
 
-          { quantity && <span className="cart-item-status">{quantity}</span> }
+          { quantity > 1 && <span className="cart-item-status">{quantity}</span> }
         </button>
 
       </div>
